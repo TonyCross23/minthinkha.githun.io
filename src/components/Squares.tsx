@@ -10,7 +10,7 @@ const Squares = () => {
     const location = useLocation();
     const [question] = useState(location.state);
     const navigate = useNavigate();
-    const handleClick = (key,number) => {
+    const handleClick = (key:number) => {
         setQuery('s', key);
     };
 

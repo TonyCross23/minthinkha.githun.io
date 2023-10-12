@@ -8,7 +8,7 @@ export default function useQueryState() {
     // const pageNumber = searchParams.get('page') || 1;
     // const pageSize = localStorage.pageSize || DEFAULT_PAGE_SIZE;
 
-    const setQuery = (key, value) => {
+    const setQuery = (key:any, value:any) => {
         setSearchParams(
             { [key]: value },
             {
@@ -17,11 +17,11 @@ export default function useQueryState() {
         );
     };
 
-    function updateQuery(queryObject) {
+    function updateQuery(queryObject:any) {
         setSearchParams({ ...Object.fromEntries(searchParams), ...queryObject });
     }
 
-    function deleteQuery(key) {
+    function deleteQuery(key:any) {
         searchParams.delete(key);
         setSearchParams({ ...Object.fromEntries(searchParams) });
     }
@@ -29,6 +29,7 @@ export default function useQueryState() {
     return {
         query: searchParams,
         setQuery,
-
+        updateQuery,
+        deleteQuery
     };
 }

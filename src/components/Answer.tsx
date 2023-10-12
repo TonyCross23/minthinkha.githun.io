@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { ANSWERS } from '../data';
 import { useMemo } from 'react';
-import useQueryState from '../utils/useQueryState';
+import useQueryState from '../utils/useQueryState.tsx';
 const Answer = () => {
     const { query } = useQueryState();
     const answerId = query.get('s');
